@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<title>leaflet</title>
-<head>
+	<meta charset="utf-8">
+	<title>Leaflet Map</title>
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <!-- Add the Leaflet JavaScript library -->
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+</head>
 <body>
+  <div id="map" style="width: 100%; height:100%; position: absolute"></div>
+
+  <script>
+      // Create variable to hold map element, give initial settings to map
+      var map = L.map('map',{ center: [46.948002, 7.448130], zoom: 5});
+
+      // Add OpenStreetMap tile layer to map element
+      L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+
+      var agroscope = L.marker([47.428739, 8.516438]).addTo(map);
+  </script>
+
+
+
 </body>
 </html>

@@ -18,7 +18,19 @@
       // Add OpenStreetMap tile layer to map element
       L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
 
-      var agroscope = L.marker([47.428739, 8.516438]).addTo(map);
+			// Create point feature for Agroscope
+			var agroscope = L.marker([47.428739, 8.516438]).addTo(map);
+
+			// Create area feature, style and add to map
+			var theArea = L.polygon([[47.411411, 8.506199], [47.414112, 8.518660],
+		[47.398645, 8.538912], [47.399080, 8.513034]],
+		{color: 'blue', weight: 3}).addTo(map);
+
+		// Bind popup to var point object
+		agroscope.bindPopup("<h3>This is for Leo</h3><p>Cambridge, MA<br>Information about Kendall Square.</p>");
+		// Bind popup to area object
+		theArea.bindPopup("ETH Campus");
+		
   </script>
 
 
